@@ -1,99 +1,109 @@
-/* Modern Reset & Fonts */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Configuration de base */
+:root {
+    --primary: #00d2ff; /* Bleu néon */
+    --secondary: #3a7bd5;
+    --bg-dark: #0f172a; /* Bleu marine très sombre */
+    --card-bg: #1e293b;
+    --text-light: #f8fafc;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-/* Container for better readability */
-main {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-/* Header & Navigation */
+/* En-tête et Navigation */
 header {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 10px 0;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-nav a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: 600;
-    transition: 0.3s;
+nav strong {
+    font-size: 1.5rem;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-nav a:hover {
-    color: #0056b3;
+/* Section Hero (L'accueil) */
+#hero {
+    text-align: center;
+    padding: 80px 10%;
+    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
 }
 
-/* Titles */
 h1 {
-    font-size: 2.5rem;
-    color: #1a1a1a;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
 }
 
-h2 {
-    color: #007bff;
-    margin: 30px 0 15px;
+/* Cartes de catégories */
+#categories {
+    padding: 40px 10%;
 }
 
-/* Cards & Lists */
 .category-card {
-    border: 1px solid #e1e4e8;
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.2s;
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .category-card:hover {
     transform: translateY(-5px);
-    border-color: #007bff;
+    border-color: var(--primary);
 }
 
+/* Liens et Boutons */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.category-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: rgba(0, 210, 255, 0.1);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.category-card a:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Listes d'outils */
 ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
+    list-style: none;
+    padding: 0;
 }
 
 li {
-    margin-bottom: 10px;
-}
-
-/* Buttons/Links Styling */
-a strong {
-    display: inline-block;
-    margin-top: 10px;
-    color: #007bff;
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    background: #eee;
-    margin: 40px 0;
+    background: rgba(255, 255, 255, 0.03);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 50px;
+    padding: 40px;
     font-size: 0.9rem;
-    color: #777;
+    opacity: 0.6;
 }
